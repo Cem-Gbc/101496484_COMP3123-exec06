@@ -1,25 +1,53 @@
 # Week06 Exercise - Notes Application
 
-Build a Restful CRUD API for a simple Note-Taking application using Node.js, Express and MongoDB.
+A simple RESTful CRUD API for a note-taking application, built with Node.js, Express and MongoDB Atlas.
 
-## Steps to Setup
+## Technologies
 
-1. Install dependencies
+- Node.js
+- Express.js
+- MongoDB Atlas
+- Mongoose
+
+## Installation
 
 ```bash
 npm install
 ```
-2. Fix error and write Note API code
 
-3. Run Server
+## MongoDB Configuration
 
-```bash
-node server.js
+Copy `.env.example` to `.env` and add your MongoDB Atlas connection string:
+
+```
+DB_URL=mongodb+srv://<db_user>:<db_password>@<cluster-host>/week06_notes?retryWrites=true&w=majority
+PORT=8081
 ```
 
-4. Optionally implement Docker OR vercel Hosting
+The `.env` file is not uploaded to GitHub.
 
-5. Test all API on Postman and take screenshots at  URL <http://localhost:8081>
+## Run Server
+
+```bash
+npm start
+```
+
+The server runs at <http://localhost:8081>
+
+## API Endpoints
+
+| Method | URL | Description |
+| ------ | --- | ----------- |
+| GET | `/` | Welcome message |
+| POST | `/notes` | Create a new note |
+| GET | `/notes` | Get all notes |
+| GET | `/notes/:noteId` | Get one note |
+| PUT | `/notes/:noteId` | Update a note |
+| DELETE | `/notes/:noteId` | Delete a note |
+
+Priority can be `HIGH`, `MEDIUM` or `LOW`.
+
+The Postman collection is in `Notes-API.postman_collection.json`.
 
 ## Sample Note Payload
 
@@ -34,3 +62,7 @@ node server.js
     }
 }
 ```
+
+## GitHub Repository
+
+<https://github.com/Cem-Gbc/101496484_COMP3123-exec06>
